@@ -1,4 +1,4 @@
-# swiftVPN
+# SwiftVPN
 iOS VPN App - CMSI 3550 Final Project
 
 swiftVPN is a simple iOS VPN App with access to five different VPN servers in New Jersey, London, Singapore, Amsterdam, and Bangalore.
