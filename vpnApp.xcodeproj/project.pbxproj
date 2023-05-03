@@ -8,17 +8,35 @@
 
 /* Begin PBXBuildFile section */
 		DB61D86429FC6040004FAA73 /* vpnAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB61D86329FC6040004FAA73 /* vpnAppApp.swift */; };
-		DB61D86629FC6040004FAA73 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB61D86529FC6040004FAA73 /* ContentView.swift */; };
 		DB61D86829FC6042004FAA73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB61D86729FC6042004FAA73 /* Assets.xcassets */; };
 		DB61D86B29FC6042004FAA73 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB61D86A29FC6042004FAA73 /* Preview Assets.xcassets */; };
+		DB61D87329FC60EB004FAA73 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB61D87229FC60EB004FAA73 /* NetworkExtension.framework */; };
+		DBA0B4AC29FDD25F00DB9363 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA0B4AB29FDD25F00DB9363 /* ContentView.swift */; };
+		DBA0B4B029FDD2A600DB9363 /* AVVPNService in Frameworks */ = {isa = PBXBuildFile; productRef = DBA0B4AF29FDD2A600DB9363 /* AVVPNService */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		DB61D88729FC6A8D004FAA73 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		DB39A14929FC9CAE00C22268 /* vpnApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = vpnApp.entitlements; sourceTree = "<group>"; };
 		DB61D86029FC6040004FAA73 /* vpnApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vpnApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB61D86329FC6040004FAA73 /* vpnAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vpnAppApp.swift; sourceTree = "<group>"; };
-		DB61D86529FC6040004FAA73 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DB61D86729FC6042004FAA73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB61D86A29FC6042004FAA73 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DB61D87229FC60EB004FAA73 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		DB61D87D29FC6A8D004FAA73 /* AppProxyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppProxyProvider.swift; path = SwiftVPNExtension/AppProxyProvider.swift; sourceTree = "<group>"; };
+		DBA0B4AB29FDD25F00DB9363 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +44,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBA0B4B029FDD2A600DB9363 /* AVVPNService in Frameworks */,
+				DB61D87329FC60EB004FAA73 /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +57,7 @@
 			children = (
 				DB61D86229FC6040004FAA73 /* vpnApp */,
 				DB61D86129FC6040004FAA73 /* Products */,
+				DB61D87129FC60EA004FAA73 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,8 +72,9 @@
 		DB61D86229FC6040004FAA73 /* vpnApp */ = {
 			isa = PBXGroup;
 			children = (
+				DB39A14929FC9CAE00C22268 /* vpnApp.entitlements */,
 				DB61D86329FC6040004FAA73 /* vpnAppApp.swift */,
-				DB61D86529FC6040004FAA73 /* ContentView.swift */,
+				DBA0B4AB29FDD25F00DB9363 /* ContentView.swift */,
 				DB61D86729FC6042004FAA73 /* Assets.xcassets */,
 				DB61D86929FC6042004FAA73 /* Preview Content */,
 			);
@@ -67,6 +89,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		DB61D87129FC60EA004FAA73 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DB61D87D29FC6A8D004FAA73 /* AppProxyProvider.swift */,
+				DB61D87229FC60EB004FAA73 /* NetworkExtension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,12 +108,16 @@
 				DB61D85C29FC6040004FAA73 /* Sources */,
 				DB61D85D29FC6040004FAA73 /* Frameworks */,
 				DB61D85E29FC6040004FAA73 /* Resources */,
+				DB61D88729FC6A8D004FAA73 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = vpnApp;
+			packageProductDependencies = (
+				DBA0B4AF29FDD2A600DB9363 /* AVVPNService */,
+			);
 			productName = vpnApp;
 			productReference = DB61D86029FC6040004FAA73 /* vpnApp.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +146,9 @@
 				Base,
 			);
 			mainGroup = DB61D85729FC6040004FAA73;
+			packageReferences = (
+				DBA0B4AE29FDD2A600DB9363 /* XCRemoteSwiftPackageReference "AVVPNService" */,
+			);
 			productRefGroup = DB61D86129FC6040004FAA73 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,7 +175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB61D86629FC6040004FAA73 /* ContentView.swift in Sources */,
+				DBA0B4AC29FDD25F00DB9363 /* ContentView.swift in Sources */,
 				DB61D86429FC6040004FAA73 /* vpnAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,6 +302,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = vpnApp/vpnApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"vpnApp/Preview Content\"";
@@ -293,6 +332,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = vpnApp/vpnApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"vpnApp/Preview Content\"";
@@ -339,6 +379,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DBA0B4AE29FDD2A600DB9363 /* XCRemoteSwiftPackageReference "AVVPNService" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AndreVasilev/AVVPNService.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DBA0B4AF29FDD2A600DB9363 /* AVVPNService */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DBA0B4AE29FDD2A600DB9363 /* XCRemoteSwiftPackageReference "AVVPNService" */;
+			productName = AVVPNService;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DB61D85829FC6040004FAA73 /* Project object */;
 }
